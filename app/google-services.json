@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "904396094989",
+    "firebase_url": "https://latihanrecyclerview-default-rtdb.firebaseio.com",
+    "project_id": "latihanrecyclerview",
+    "storage_bucket": "latihanrecyclerview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904396094989:android:1f95a6754de58257675f44",
+        "android_client_info": {
+          "package_name": "com.example.recyclerview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904396094989-19o97snpea3kbikj4q5jvsdn6jtcchq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf4xX_IcyCRm_81th70-WBtyBxiZZe-f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904396094989-19o97snpea3kbikj4q5jvsdn6jtcchq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904396094989:android:1ca7f8843c8365f9675f44",
+        "android_client_info": {
+          "package_name": "com.reboku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904396094989-19o97snpea3kbikj4q5jvsdn6jtcchq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf4xX_IcyCRm_81th70-WBtyBxiZZe-f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904396094989-19o97snpea3kbikj4q5jvsdn6jtcchq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
