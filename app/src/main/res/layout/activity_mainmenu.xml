@@ -13,63 +13,63 @@
 
     <ImageView
         android:id="@+id/btn_news"
-        android:layout_width="200dp"
-        android:layout_height="61dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.90"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintVertical_bias="0.123"
         app:srcCompat="@drawable/btn_news" />
 
     <ImageView
         android:id="@+id/btn_info"
-        android:layout_width="200dp"
-        android:layout_height="61dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.90"
+        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.123"
         app:srcCompat="@drawable/btn_info" />
 
     <ImageView
         android:id="@+id/btn_progress"
-        android:layout_width="200dp"
-        android:layout_height="61dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.40"
+        app:layout_constraintVertical_bias="0.458"
         app:srcCompat="@drawable/btn_progress" />
 
     <ImageView
         android:id="@+id/btn_tanaman_ku"
-        android:layout_width="200dp"
-        android:layout_height="61dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.55"
+        app:layout_constraintVertical_bias="0.458"
         app:srcCompat="@drawable/btn_tanaman_ku" />
 
-    <ImageView
-        android:id="@+id/btn_about_us"
-        android:layout_width="200dp"
-        android:layout_height="61dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.70"
-        app:srcCompat="@drawable/btn_about_us" />
+<!--    <ImageView-->
+<!--        android:id="@+id/btn_about_us"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="61dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.497"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView10"-->
+<!--        app:layout_constraintVertical_bias="0.777"-->
+<!--        app:srcCompat="@drawable/btn_about_us" />-->
 
     <ImageView
         android:id="@+id/imageView10"
@@ -77,10 +77,24 @@
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066"
+        app:layout_constraintVertical_bias="0.119"
         app:srcCompat="@drawable/iconreboku" />
+
+    <TextView
+        android:id="@+id/btn_about_us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="About Us"
+        android:textColor="#F7F7F7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.829" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

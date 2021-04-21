@@ -7,18 +7,19 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
         android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@android:color/transparent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:background="#F7BEC9">
+            android:background="#00FFFFFF">
 
             <TextView
 
@@ -29,8 +30,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="#4F4F4F"
                 android:textSize="18sp"
                 android:textStyle="bold">
 
@@ -44,9 +45,9 @@
                 android:layout_alignBaseline="@+id/textTempat"
                 android:layout_alignParentEnd="true"
 
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/poppins_semibold"
                 android:textAlignment="textEnd"
-                android:textColor="@color/white"
+                android:textColor="#3AAFA9"
                 android:textSize="18sp"
                 android:textStyle="bold">
 

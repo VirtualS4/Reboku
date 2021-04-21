@@ -18,16 +18,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F7BEC9"
-            >
+            android:background="#FFFFFF">
 
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:scaleType="centerCrop"
-                />
+                android:layout_height="100dp"
+                android:scaleType="centerCrop" />
 
             <TextView
 
@@ -35,11 +33,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView"
-                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="#4F4F4F"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:fontFamily="@font/montserrat"/>
+                android:textStyle="bold" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

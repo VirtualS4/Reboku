@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class MainMenu extends AppCompatActivity {
         ImageView menuProgress = findViewById(R.id.btn_progress);
         ImageView menuInfo = findViewById(R.id.btn_info);
         ImageView menuTanamanKu = findViewById(R.id.btn_tanaman_ku);
-        ImageView menuAboutUs = findViewById(R.id.btn_about_us);
+        TextView menuAboutUs = findViewById(R.id.btn_about_us);
 
 
         menuNews.setOnClickListener(new View.OnClickListener() {
