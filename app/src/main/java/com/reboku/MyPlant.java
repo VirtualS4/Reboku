@@ -14,7 +14,7 @@ public class MyPlant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_plant);
 
-        ImageView back = findViewById(R.id.back);
+        ImageView back = findViewById(R.id.backbutton);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
