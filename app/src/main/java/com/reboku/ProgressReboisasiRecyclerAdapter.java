@@ -13,15 +13,14 @@ import java.util.ArrayList;
 
 
 
-public class ProgressReboisasiRecyclerAdapter extends RecyclerView.Adapter<ProgressReboisasiRecyclerAdapter.ViewHolder> {
+public class ProgressReboisasiRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String Tag = "RecyclerView";
     private  Context mContext;
     private ArrayList<ProgressReboisasiMessages> progressReboisasiMessagesList;
     public ClickListener mListener;
 
-
-    public ProgressReboisasiRecyclerAdapter(Context mContext, ArrayList<ProgressReboisasiMessages> progressReboisasiMessagesList, ClickListener listener) {
+    public ProgressReboisasiRecyclerAdapter(Context mContext, ArrayList<ProgressReboisasiMessages> progressReboisasiMessagesList,ClickListener listener) {
         this.mContext = mContext;
         this.mListener = listener;
         this.progressReboisasiMessagesList = progressReboisasiMessagesList;
@@ -30,20 +29,28 @@ public class ProgressReboisasiRecyclerAdapter extends RecyclerView.Adapter<Progr
 
     @NonNull
     @Override
-    public ProgressReboisasiRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_progressreboisasi, parent, false);
 
-        return  new ViewHolder(view);
+        return  new RowViewHolder(view,mListener);
 
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         //Text View
-        holder.textJumlah.setText(progressReboisasiMessagesList.get(position).getRealisasi_jumlahpohon());
-        holder.textTempat.setText(progressReboisasiMessagesList.get(position).getNama_provinsi());
+        if (holder instanceof RowViewHolder) {
+            RowViewHolder rowHolder = (RowViewHolder) holder;
+            //set values of data here
+            TextView txt_jumlah = holder.itemView.findViewById(R.id.textJumlah);
+            txt_jumlah.setText(progressReboisasiMessagesList.get(position).getRealisasi_jumlahpohon());
+            TextView txt_tempat = holder.itemView.findViewById(R.id.textTempat);
+            txt_tempat.setText(progressReboisasiMessagesList.get(position).getNama_provinsi());
+            //holder.textTempat.setText(progressReboisasiMessagesList.get(position).getNama_provinsi());
+        }
+
 
     }
 

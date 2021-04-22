@@ -26,11 +26,8 @@ import java.util.ArrayList;
 
 public class ProgressReboisasi extends AppCompatActivity {
     RecyclerView recyclerView;
-
-
     //firebase:
     private DatabaseReference myRef;
-
 
     //Variables
     private ArrayList<ProgressReboisasiMessages> progressReboisasiMessagesList;
@@ -45,7 +42,6 @@ public class ProgressReboisasi extends AppCompatActivity {
 
         ImageView back = findViewById(R.id.backbutton);
         back.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 Intent goToHome = new Intent(getApplicationContext(), MainMenu.class);
@@ -59,19 +55,24 @@ public class ProgressReboisasi extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
 
+        //Arraylist:
+        progressReboisasiMessagesList = new ArrayList<>();
+
         //firebase
         myRef = FirebaseDatabase.getInstance().getReference();
 
-        //Arraylist:
-        progressReboisasiMessagesList = new ArrayList<>();
+
 
         //clear array list
         ClearAll();
 
-        //get data method
-        GetDataFromFirebase();
-        Query query = myRef.child("progress-reboisasi");
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Query query = myRef.child("progress-reboisasi");
+        System.out.println("Testing Output Baru");
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -84,6 +85,8 @@ public class ProgressReboisasi extends AppCompatActivity {
                     String target_reboisasi = snapshot.child("target_reboisasi").getValue().toString();
                     String realisasi_reboisasi = snapshot.child("realisasi_reboisasi").getValue().toString();
                     String reboisasi_jumlahpohon = snapshot.child("reboisasi_jumlahpohon").getValue().toString();
+                    System.out.println(nama_provinsi);
+                    System.out.println("Testing Output 2");
 
                     ProgressReboisasiMessages messages = new ProgressReboisasiMessages(nama_provinsi,target_penghijauan,realisasi_penghijauan,realisasi_jumlahpohon,target_reboisasi,realisasi_reboisasi,reboisasi_jumlahpohon);
 
@@ -92,8 +95,7 @@ public class ProgressReboisasi extends AppCompatActivity {
                 ClickListener listener = (view, position) -> {
                     Intent bearsense = new Intent(ProgressReboisasi.this,DetailProgress.class);
                     ProgressReboisasiMessages bear = progressReboisasiMessagesList.get(position);
-                    bearsense.putExtra("Barang",bear);
-                    bearsense.putExtra("ViewOnly","No");
+                    bearsense.putExtra("Data",bear);
                     startActivity(bearsense);
                 };
                 recyclerAdapter = new ProgressReboisasiRecyclerAdapter(getApplicationContext(), progressReboisasiMessagesList,listener);
@@ -106,13 +108,8 @@ public class ProgressReboisasi extends AppCompatActivity {
 
             }
         });
-
     }
 
-    private void GetDataFromFirebase(){
-
-
-    }
 
     private void ClearAll(){
         if(progressReboisasiMessagesList != null){

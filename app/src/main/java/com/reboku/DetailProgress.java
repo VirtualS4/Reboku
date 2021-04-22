@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.common.util.ScopeUtil;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -18,7 +19,7 @@ public class DetailProgress extends AppCompatActivity {
     private String nama_provinsi;
     private int target_penghijauan,realisasi_penghijauan,realisasi_jumlahpohon, target_reboisasi, realisasi_reboisasi, reboisasi_jumlahpohon;
     private TextView txt_rebo_tar,txt_rebo_real,txt_rebo_poh,txt_hijau_tar,txt_hijau_real,txt_hijau_poh, txt_nama_provinsi;
-    private DataReboisasi data;
+    private ProgressReboisasiMessages data;
     private Bundle bun;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +37,26 @@ public class DetailProgress extends AppCompatActivity {
         bun = getIntent().getExtras();
         initbtnBack();
         item_id = "Kosong";
+        System.out.println("Test 1");
         if(bun.getParcelable("Data") != null){
-            data = bun.getParcelable("Barang");
-            item_id = data.getNama_provinsi();
+            System.out.println("Test 2");
+            data = bun.getParcelable("Data");
+            //item_id = data.getNama_provinsi();
+            System.out.println(data.getNama_provinsi());
             fillField();
         }
     }
 
     private void fillField(){
-
-        txt_nama_provinsi.setText(String.valueOf(data.getNama_provinsi()));
-        txt_rebo_tar.setText(String.valueOf(data.getTarget_reboisasi()));
-        txt_rebo_real.setText(String.valueOf(data.getRealisasi_reboisasi()));
-        txt_rebo_poh.setText(String.valueOf(data.getReboisasi_jumlahpohon()));
-        txt_hijau_tar.setText(String.valueOf(data.getTarget_penghijauan()));
-        txt_hijau_real.setText(String.valueOf(data.getRealisasi_penghijauan()));
-        txt_hijau_poh.setText(String.valueOf(data.getRealisasi_jumlahpohon()));
+        //System.out.println(data.getNama_provinsi());
+        //System.out.println(data.getRealisasi_jumlahpohon());
+        txt_nama_provinsi.setText(data.getNama_provinsi());
+        txt_rebo_tar.setText(data.getTarget_reboisasi());
+        txt_rebo_real.setText(data.getRealisasi_reboisasi());
+        txt_rebo_poh.setText(data.getReboisasi_jumlahpohon());
+        txt_hijau_tar.setText(data.getTarget_penghijauan());
+        txt_hijau_real.setText(data.getRealisasi_penghijauan());
+        txt_hijau_poh.setText(data.getRealisasi_jumlahpohon());
         //getPicDatabase(data.getGambar(),img);
     }
 

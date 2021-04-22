@@ -77,15 +77,15 @@ public class ProgressReboisasiMessages implements Parcelable{
         this.reboisasi_jumlahpohon = in.readString();
     }
 
-    public static final Parcelable.Creator<DataReboisasi> CREATOR = new Parcelable.Creator<DataReboisasi>() {
+    public static final Parcelable.Creator<ProgressReboisasiMessages> CREATOR = new Parcelable.Creator<ProgressReboisasiMessages>() {
         @Override
-        public DataReboisasi createFromParcel(Parcel source) {
-            return new DataReboisasi(source);
+        public ProgressReboisasiMessages createFromParcel(Parcel source) {
+            return new ProgressReboisasiMessages(source);
         }
 
         @Override
-        public DataReboisasi[] newArray(int size) {
-            return new DataReboisasi[size];
+        public ProgressReboisasiMessages[] newArray(int size) {
+            return new ProgressReboisasiMessages[size];
         }
     };
 
