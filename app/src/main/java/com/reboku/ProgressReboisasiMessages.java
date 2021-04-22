@@ -6,13 +6,13 @@ import android.os.Parcelable;
 public class ProgressReboisasiMessages implements Parcelable{
 
     private String nama_provinsi;
-    private int target_penghijauan,realisasi_penghijauan,realisasi_jumlahpohon, target_reboisasi, realisasi_reboisasi, reboisasi_jumlahpohon;
+    private String target_penghijauan,realisasi_penghijauan,realisasi_jumlahpohon, target_reboisasi, realisasi_reboisasi, reboisasi_jumlahpohon;
 
     public ProgressReboisasiMessages() {
 
     }
 
-    public ProgressReboisasiMessages(String nama_provinsi, int target_penghijauan, int realisasi_penghijauan, int realisasi_jumlahpohon, int target_reboisasi, int realisasi_reboisasi, int reboisasi_jumlahpohon) {
+    public ProgressReboisasiMessages(String nama_provinsi, String target_penghijauan, String realisasi_penghijauan, String realisasi_jumlahpohon, String target_reboisasi, String realisasi_reboisasi, String reboisasi_jumlahpohon) {
         this.nama_provinsi = nama_provinsi;
         this.target_penghijauan = target_penghijauan;
         this.realisasi_penghijauan = realisasi_penghijauan;
@@ -26,27 +26,27 @@ public class ProgressReboisasiMessages implements Parcelable{
         return nama_provinsi;
     }
 
-    public int getTarget_penghijauan() {
+    public String getTarget_penghijauan() {
         return target_penghijauan;
     }
 
-    public int getRealisasi_penghijauan() {
+    public String getRealisasi_penghijauan() {
         return realisasi_penghijauan;
     }
 
-    public int getRealisasi_jumlahpohon() {
+    public String getRealisasi_jumlahpohon() {
         return realisasi_jumlahpohon;
     }
 
-    public int getTarget_reboisasi() {
+    public String getTarget_reboisasi() {
         return target_reboisasi;
     }
 
-    public int getRealisasi_reboisasi() {
+    public String getRealisasi_reboisasi() {
         return realisasi_reboisasi;
     }
 
-    public int getReboisasi_jumlahpohon() {
+    public String getReboisasi_jumlahpohon() {
         return reboisasi_jumlahpohon;
     }
 
@@ -59,22 +59,22 @@ public class ProgressReboisasiMessages implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.nama_provinsi);
-        dest.writeInt(this.target_penghijauan);
-        dest.writeInt(this.realisasi_penghijauan);
-        dest.writeInt(this.realisasi_jumlahpohon);
-        dest.writeInt(this.target_reboisasi);
-        dest.writeInt(this.realisasi_reboisasi);
-        dest.writeInt(this.reboisasi_jumlahpohon);
+        dest.writeString(this.target_penghijauan);
+        dest.writeString(this.realisasi_penghijauan);
+        dest.writeString(this.realisasi_jumlahpohon);
+        dest.writeString(this.target_reboisasi);
+        dest.writeString(this.realisasi_reboisasi);
+        dest.writeString(this.reboisasi_jumlahpohon);
     }
 
     public ProgressReboisasiMessages(Parcel in) {
         this.nama_provinsi = in.readString();
-        this.target_penghijauan = in.readInt();
-        this.realisasi_penghijauan = in.readInt();
-        this.realisasi_jumlahpohon = in.readInt();
-        this.target_reboisasi = in.readInt();
-        this.realisasi_reboisasi = in.readInt();
-        this.reboisasi_jumlahpohon = in.readInt();
+        this.target_penghijauan = in.readString();
+        this.realisasi_penghijauan = in.readString();
+        this.realisasi_jumlahpohon = in.readString();
+        this.target_reboisasi = in.readString();
+        this.realisasi_reboisasi = in.readString();
+        this.reboisasi_jumlahpohon = in.readString();
     }
 
     public static final Parcelable.Creator<DataReboisasi> CREATOR = new Parcelable.Creator<DataReboisasi>() {

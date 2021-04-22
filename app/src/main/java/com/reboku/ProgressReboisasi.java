@@ -73,18 +73,21 @@ public class ProgressReboisasi extends AppCompatActivity {
         Query query = myRef.child("progress-reboisasi");
 
         query.addValueEventListener(new ValueEventListener() {
-
-
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ClearAll();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    ProgressReboisasiMessages progressReboisasiMessages = new ProgressReboisasiMessages();
+                    String nama_provinsi = snapshot.child("nama_provinsi").getValue().toString();
+                    String target_penghijauan = snapshot.child("target_penghijauan").getValue().toString();
+                    String realisasi_penghijauan = snapshot.child("realisasi_penghijauan").getValue().toString();
+                    String realisasi_jumlahpohon = snapshot.child("realisasi_jumlahpohon").getValue().toString();
+                    String target_reboisasi = snapshot.child("target_reboisasi").getValue().toString();
+                    String realisasi_reboisasi = snapshot.child("realisasi_reboisasi").getValue().toString();
+                    String reboisasi_jumlahpohon = snapshot.child("reboisasi_jumlahpohon").getValue().toString();
 
-                    String nama_prov = snapshot.child("tempat").getValue().toString();
-                    String hijau_real = snapshot.child("jumlah").getValue().toString();
+                    ProgressReboisasiMessages messages = new ProgressReboisasiMessages(nama_provinsi,target_penghijauan,realisasi_penghijauan,realisasi_jumlahpohon,target_reboisasi,realisasi_reboisasi,reboisasi_jumlahpohon);
 
-                    progressReboisasiMessagesList.add(progressReboisasiMessages);
+                    progressReboisasiMessagesList.add(messages);
                 }
                 ClickListener listener = (view, position) -> {
                     Intent bearsense = new Intent(ProgressReboisasi.this,DetailProgress.class);
