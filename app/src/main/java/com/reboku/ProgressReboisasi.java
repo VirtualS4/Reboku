@@ -8,8 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,7 +48,7 @@ public class ProgressReboisasi extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent goToHome= new Intent(getApplicationContext(), MainMenu.class);
+                Intent goToHome = new Intent(getApplicationContext(), MainMenu.class);
                 startActivity(goToHome);
             }
         });
@@ -74,16 +78,22 @@ public class ProgressReboisasi extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ClearAll();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     ProgressReboisasiMessages progressReboisasiMessages = new ProgressReboisasiMessages();
 
-                    progressReboisasiMessages.setTempat(snapshot.child("tempat").getValue().toString());
-                    progressReboisasiMessages.setJumlah(snapshot.child("jumlah").getValue().toString());
+                    String nama_prov = snapshot.child("tempat").getValue().toString();
+                    String hijau_real = snapshot.child("jumlah").getValue().toString();
 
                     progressReboisasiMessagesList.add(progressReboisasiMessages);
                 }
-
-                recyclerAdapter = new ProgressReboisasiRecyclerAdapter(getApplicationContext(), progressReboisasiMessagesList);
+                ClickListener listener = (view, position) -> {
+                    Intent bearsense = new Intent(ProgressReboisasi.this,DetailProgress.class);
+                    ProgressReboisasiMessages bear = progressReboisasiMessagesList.get(position);
+                    bearsense.putExtra("Barang",bear);
+                    bearsense.putExtra("ViewOnly","No");
+                    startActivity(bearsense);
+                };
+                recyclerAdapter = new ProgressReboisasiRecyclerAdapter(getApplicationContext(), progressReboisasiMessagesList,listener);
                 recyclerView.setAdapter(recyclerAdapter);
                 recyclerAdapter.notifyDataSetChanged();
             }

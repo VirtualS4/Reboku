@@ -1,18 +1,17 @@
 package com.reboku;
 
-import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.Parcel;
 
-public class ProgressReboisasiMessages implements Parcelable{
-
+public class DataReboisasi implements Parcelable {
     private String nama_provinsi;
     private int target_penghijauan,realisasi_penghijauan,realisasi_jumlahpohon, target_reboisasi, realisasi_reboisasi, reboisasi_jumlahpohon;
 
-    public ProgressReboisasiMessages() {
+    public DataReboisasi() {
 
     }
 
-    public ProgressReboisasiMessages(String nama_provinsi, int target_penghijauan, int realisasi_penghijauan, int realisasi_jumlahpohon, int target_reboisasi, int realisasi_reboisasi, int reboisasi_jumlahpohon) {
+    public DataReboisasi(String nama_provinsi, int target_penghijauan, int realisasi_penghijauan, int realisasi_jumlahpohon, int target_reboisasi, int realisasi_reboisasi, int reboisasi_jumlahpohon) {
         this.nama_provinsi = nama_provinsi;
         this.target_penghijauan = target_penghijauan;
         this.realisasi_penghijauan = realisasi_penghijauan;
@@ -67,7 +66,7 @@ public class ProgressReboisasiMessages implements Parcelable{
         dest.writeInt(this.reboisasi_jumlahpohon);
     }
 
-    public ProgressReboisasiMessages(Parcel in) {
+    public DataReboisasi(Parcel in) {
         this.nama_provinsi = in.readString();
         this.target_penghijauan = in.readInt();
         this.realisasi_penghijauan = in.readInt();
@@ -88,6 +87,4 @@ public class ProgressReboisasiMessages implements Parcelable{
             return new DataReboisasi[size];
         }
     };
-
-
 }
