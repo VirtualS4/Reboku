@@ -87,12 +87,12 @@ public class InformationCenter extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ClearAll();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    InformationCenterMessages InformationCenterMessages = new InformationCenterMessages();
+                    InformationCenterMessages informationCenterMessages = new InformationCenterMessages();
 
-                    InformationCenterMessages.setName(snapshot.child("tittle").getValue().toString());
-                    InformationCenterMessages.setImagesUrl(snapshot.child("image").getValue().toString());
+                    informationCenterMessages.setName(snapshot.child("tittle").getValue().toString());
+                    informationCenterMessages.setImagesUrl(snapshot.child("image").getValue().toString());
 
-                    informationCenterMessagesList.add(InformationCenterMessages);
+                    informationCenterMessagesList.add(informationCenterMessages);
                 }
 
                 recyclerAdapter = new InformationCenterRecyclerAdapter(getApplicationContext(), informationCenterMessagesList);

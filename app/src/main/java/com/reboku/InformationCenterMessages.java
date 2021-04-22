@@ -1,6 +1,9 @@
 package com.reboku;
 
 public class InformationCenterMessages {
+
+
+
     //model class
     String name;
     String imagesUrl;
@@ -13,19 +16,11 @@ public class InformationCenterMessages {
         this.imagesUrl = imagesUrl;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public String getImagesUrl() {
-        return imagesUrl;
-    }
+    public String getImagesUrl() {return imagesUrl; }
 
-    public void setImagesUrl(String imagesUrl) {
-        this.imagesUrl = imagesUrl;
-    }
+    public void setImagesUrl(String imagesUrl) { this.imagesUrl = imagesUrl; }
 }
