@@ -61,8 +61,6 @@ public class ProgressReboisasi extends AppCompatActivity {
         //firebase
         myRef = FirebaseDatabase.getInstance().getReference();
 
-
-
         //clear array list
         ClearAll();
 

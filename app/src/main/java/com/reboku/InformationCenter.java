@@ -57,11 +57,6 @@ public class InformationCenter extends AppCompatActivity {
         });
 
 
-
-
-
-
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);

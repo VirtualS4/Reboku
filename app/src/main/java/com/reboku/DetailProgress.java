@@ -12,6 +12,8 @@ import com.google.android.gms.common.util.ScopeUtil;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DecimalFormat;
+
 public class DetailProgress extends AppCompatActivity {
 
     private DatabaseReference db;
@@ -51,11 +53,11 @@ public class DetailProgress extends AppCompatActivity {
         //System.out.println(data.getNama_provinsi());
         //System.out.println(data.getRealisasi_jumlahpohon());
         txt_nama_provinsi.setText(data.getNama_provinsi());
-        txt_rebo_tar.setText(data.getTarget_reboisasi());
-        txt_rebo_real.setText(data.getRealisasi_reboisasi());
+        txt_rebo_tar.setText(data.getTarget_reboisasi()+" HA");
+        txt_rebo_real.setText(data.getRealisasi_reboisasi()+" HA");
         txt_rebo_poh.setText(data.getReboisasi_jumlahpohon());
-        txt_hijau_tar.setText(data.getTarget_penghijauan());
-        txt_hijau_real.setText(data.getRealisasi_penghijauan());
+        txt_hijau_tar.setText(data.getTarget_penghijauan()+" HA");
+        txt_hijau_real.setText(data.getRealisasi_penghijauan()+ " HA");
         txt_hijau_poh.setText(data.getRealisasi_jumlahpohon());
         //getPicDatabase(data.getGambar(),img);
     }
@@ -69,6 +71,12 @@ public class DetailProgress extends AppCompatActivity {
                 startActivity(bearsense);
             }
         });
+    }
+
+    private String currencyFormatter(String num) {
+        double m = Double.parseDouble(num);
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        return formatter.format(m);
     }
 
 
