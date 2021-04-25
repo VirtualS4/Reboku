@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="#FFFFFF"
@@ -18,40 +18,42 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF">
+            android:layout_height="75dp"
+            android:background="@drawable/bglistprogress"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/textJumlah"
+                android:layout_width="150dp"
+                android:layout_toLeftOf="@id/textTempat"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignBaseline="@+id/textTempat"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:textAlignment="textEnd"
+                android:textColor="#3AAFA9"
+                android:textSize="16sp"
+                android:textStyle="bold">
+
+            </TextView>
 
             <TextView
 
                 android:id="@+id/textTempat"
-                android:layout_width="222dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
-
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/poppins_semibold"
+                android:textAlignment="textStart"
                 android:textColor="#4F4F4F"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold">
 
             </TextView>
 
-            <TextView
-                android:id="@+id/textJumlah"
-                android:layout_width="170dp"
-
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/textTempat"
-                android:layout_alignParentEnd="true"
-
-                android:fontFamily="@font/poppins_semibold"
-                android:textAlignment="textEnd"
-                android:textColor="#3AAFA9"
-                android:textSize="18sp"
-                android:textStyle="bold">
-
-            </TextView>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

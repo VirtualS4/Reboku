@@ -67,7 +67,7 @@ public class DetailProgress extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent bearsense = new Intent(DetailProgress.this,MainMenu.class);
+                Intent bearsense = new Intent(DetailProgress.this,ProgressReboisasi.class);
                 startActivity(bearsense);
             }
         });
